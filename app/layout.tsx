@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   description:
     "Building future-ready web apps with React, Node.js, and AI. Explore my work on AI tools, Exa Ranking Lab, and no-code automation platforms.",
   icons: {
-    icon: "/favicon.png", // or "/favicon.png" if you’re using PNG
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
   },
     keywords: [
     "Chaitanya Kulthe",
@@ -29,20 +32,20 @@ export const metadata: Metadata = {
     "No-Code AI",
     "Software Portfolio",
   ],
-  authors: [{ name: "Chaitanya Kulthe", url: "https://codexnever.vercel.app" }],
+  authors: [{ name: "Chaitanya Kulthe", url: "https://portfolio-three-rosy-39.vercel.app/" }],
   creator: "Chaitanya Kulthe",
-  metadataBase: new URL("https://codexnever.vercel.app"),
+  metadataBase: new URL("https://portfolio-three-rosy-39.vercel.app/"),
   openGraph: {
     title: "Chaitanya Kulthe | Full Stack & AI Developer",
     description:
       "A self-taught dev building powerful tools with JavaScript, AI, and semantic search. Dive into real-world projects like Exa Ranking Lab and no-code AI workflows.",
-    url: "https://codexnever.vercel.app",
+    url: "https://portfolio-three-rosy-39.vercel.app/",
     siteName: "Chaitanya Kulthe Portfolio",
     images: [
       {
-        url: "/og-cover.png", // Make sure this image exists in /public
-        width: 1200,
-        height: 630,
+        url: "/og-cover.png",
+        width: 530,
+        height: 300,
         alt: "Chaitanya Kulthe – Developer Portfolio",
       },
     ],
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chaitanya Kulthe | Full Stack & AI Developer",
+    title: "Chaitanya Kulthe | Next-Gen Engineer",
     description:
       "Explore AI-powered apps, developer tools, and next-gen search analytics built with love, logic, and JavaScript.",
     images: ["/og-cover.png"],

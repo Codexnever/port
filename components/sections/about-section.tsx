@@ -138,8 +138,8 @@ export function AboutSection() {
                           "Node.js",
                           "Express.js",
                           "RESTful APIs",
-                          "OpenAPI Specification",
-                          "JWT",
+                          "OpenAI",
+                          "Serverless Backend",
                           "RabbitMQ",
                           "Backend Communications Protocol",
                         ].map((skill) => (
