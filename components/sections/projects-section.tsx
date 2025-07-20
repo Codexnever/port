@@ -64,7 +64,7 @@ export function ProjectsSection() {
             <AdvancedProjectCard
               title="Exa Ranking Lab(Soon...)"
               description="Soon..."
-              image="/exa-ranking-lab.png"
+              image="/soon.png"
               tags={["Next.js", "Tailwind CSS", "Exa API", "Appwrite", "TypeScript", "NLP"]}
               githubUrl="#"
               funnyBug="Once thought 'AI girlfriend' and 'ranking algorithm' were the same thing. Close enough."
