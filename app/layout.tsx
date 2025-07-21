@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Chaitanya Kulthe Portfolio",
     images: [
       {
-        url: "/og-cover.png",
+        url: "./og-cover.png",
         width: 530,
         height: 300,
         alt: "Chaitanya Kulthe – Developer Portfolio",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Chaitanya Kulthe | Next-Gen Engineer",
     description:
       "Explore AI-powered apps, developer tools, and next-gen search analytics built with love, logic, and JavaScript.",
-    images: ["/og-cover.png"],
+    images: ["./og-cover.png"],
     creator: "@ChaitanyaK48841", 
   },
 }
