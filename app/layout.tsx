@@ -13,12 +13,6 @@ export const metadata: Metadata = {
   title: "Chaitanya Kulthe | Full Stack & AI Developer",
   description:
     "Building future-ready web apps with React, Node.js, and AI. Explore my work on AI tools, Exa Ranking Lab, and no-code automation platforms.",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/favicon.png", type: "image/png" },
-    ],
-  },
     keywords: [
     "Chaitanya Kulthe",
     "Full Stack Developer",
@@ -69,7 +63,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={false}>
+    <html lang="en" suppressHydrationWarning={true}>
+      <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+      <link rel="icon" type="image/png" href="./favicon.png" />
       <body className={`${jetbrainsMono.variable} ${outfit.variable} font-sans bg-black text-white`}>
         <DayNightBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>

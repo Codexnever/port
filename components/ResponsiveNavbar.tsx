@@ -16,12 +16,13 @@ const navItems = [
   { href: "#projects", label: "Projects", icon: Briefcase },
   { href: "#blog", label: "Blog", icon: FileText },
   { href: "#contact", label: "Contact", icon: Mail },
-];
+];  
 
 export default function ResponsiveNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [hash, setHash] = useState<string>("");
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -44,6 +45,18 @@ export default function ResponsiveNavbar() {
     );
     document.querySelectorAll("section[id]").forEach((sec) => observer.observe(sec));
     return () => document.querySelectorAll("section[id]").forEach((sec) => observer.unobserve(sec));
+  }, []);
+
+  // Track hash for client-side navigation
+  useEffect(() => {
+    const updateHash = () => {
+      if (typeof window !== "undefined") {
+        setHash(window.location.hash);
+      }
+    };
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
   }, []);
 
   // Desktop navbar
@@ -132,10 +145,14 @@ export default function ResponsiveNavbar() {
       <div className="flex justify-between items-center px-4 py-3">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive =
-            item.href === "/"
-              ? pathname === "/"
-              : activeId === item.href.replace("#", "");
+          let isActive = false;
+          if (item.href === "/") {
+            isActive = pathname === "/" && (!hash || hash === "#");
+          } else if (item.href.startsWith("#")) {
+            isActive = hash === item.href;
+          } else {
+            isActive = pathname === item.href;
+          }
           return (
             <Link
               key={item.href}
@@ -146,6 +163,14 @@ export default function ResponsiveNavbar() {
                   ? "text-indigo-400 drop-shadow-[0_0_6px_rgba(99,102,241,0.6)]"
                   : "text-gray-400"
               )}
+              onClick={() => {
+                if (item.href.startsWith("#")) {
+                  setTimeout(() => {
+                    setActiveId(item.href.replace("#", ""));
+                    setHash(item.href);
+                  }, 10);
+                }
+              }}
             >
               <motion.div
                 animate={isActive ? { scale: 1.2 } : { scale: 1 }}
