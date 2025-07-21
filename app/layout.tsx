@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Chaitanya Kulthe Portfolio",
     images: [
       {
-        url: "https://portfolio-three-rosy-39.vercel.app/og-cover.jpg",
+        url: "https://portfolio-three-rosy-39.vercel.app/og-cover-v2.jpg",
         width: 1200,
         height: 630,
         alt: "Chaitanya Kulthe – Developer Portfolio",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Chaitanya Kulthe | Next-Gen Engineer",
     description:
       "Explore AI-powered apps, developer tools, and next-gen search analytics built with love, logic, and JavaScript.",
-    images: ["https://portfolio-three-rosy-39.vercel.app/og-cover.jpg"],//Must full url 
+    images: ["https://portfolio-three-rosy-39.vercel.app/og-cover-v2.jpg"],//Must full url 
     creator: "@ChaitanyaK48841", 
   },
 }
