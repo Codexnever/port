@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Chaitanya Kulthe Portfolio",
     images: [
       {
-        url: "./og-cover.png",
+        url: "https://portfolio-three-rosy-39.vercel.app/og-cover.jpg",
         width: 530,
         height: 300,
         alt: "Chaitanya Kulthe – Developer Portfolio",
