@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://portfolio-three-rosy-39.vercel.app/og-cover.jpg",
-        width: 530,
-        height: 300,
+        width: 1200,
+        height: 630,
         alt: "Chaitanya Kulthe – Developer Portfolio",
       },
     ],
