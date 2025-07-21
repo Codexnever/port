@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Chaitanya Kulthe | Next-Gen Engineer",
     description:
       "Explore AI-powered apps, developer tools, and next-gen search analytics built with love, logic, and JavaScript.",
-    images: ["./og-cover.jpg"],
+    images: ["https://portfolio-three-rosy-39.vercel.app/og-cover.jpg"],//Must full url 
     creator: "@ChaitanyaK48841", 
   },
 }
