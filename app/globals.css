@@ -27,9 +27,12 @@
 
 * {
   @apply border-border;
-  border-radius: 14px;
- scrollbar-width: thin;
+  scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
+}
+/* Only apply border-radius to cards and rounded elements, not all elements */
+.card, .rounded, .rounded-xl, .rounded-lg, .rounded-md, .rounded-sm {
+  border-radius: 14px;
 }
 
 body {

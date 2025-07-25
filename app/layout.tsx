@@ -24,18 +24,18 @@ export const metadata: Metadata = {
     "No-Code AI",
     "Software Portfolio",
   ],
-  authors: [{ name: "Chaitanya Kulthe", url: "https://portfolio-three-rosy-39.vercel.app/" }],
+  authors: [{ name: "Chaitanya Kulthe", url: "https://codexnever.appwrite.network/" }],
   creator: "Chaitanya Kulthe",
-  metadataBase: new URL("https://portfolio-three-rosy-39.vercel.app/"),
+  metadataBase: new URL("https://codexnever.appwrite.network/"),
   openGraph: {
     title: "Chaitanya Kulthe | Full Stack & AI Developer",
     description:
       "A self-taught dev building powerful tools with JavaScript, AI, and semantic search. Dive into real-world projects like Exa Ranking Lab and no-code AI workflows.",
-    url: "https://portfolio-three-rosy-39.vercel.app/",
+    url: "https://codexnever.appwrite.network//",
     siteName: "Chaitanya Kulthe Portfolio",
     images: [
       {
-        url: "https://portfolio-three-rosy-39.vercel.app/og-cover-v2.jpg",
+        url: "https://codexnever.appwrite.network/og-cover-v2.jpg",
         width: 1200,
         height: 630,
         alt: "Chaitanya Kulthe – Developer Portfolio",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Chaitanya Kulthe | Next-Gen Engineer",
     description:
       "Explore AI-powered apps, developer tools, and next-gen search analytics built with love, logic, and JavaScript.",
-    images: ["https://portfolio-three-rosy-39.vercel.app/og-cover-v2.jpg"],//Must full url 
+    images: ["https://codexnever.appwrite.network/og-cover-v2.jpg"],//Must full url 
     creator: "@ChaitanyaK48841", 
   },
 }
@@ -62,8 +62,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-      <link rel="icon" type="image/png" href="./favicon.png" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" href="/favicon.png" />
       <body className={`${jetbrainsMono.variable} ${outfit.variable} font-sans bg-black text-white`}>
         <DayNightBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
