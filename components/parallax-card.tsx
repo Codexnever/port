@@ -56,13 +56,17 @@ export function ParallaxCard({ children, className, backgroundClassName }: Paral
       }}
       transition={{ type: "spring", stiffness: 100, damping: 10 }}
     >
-      <div
-        className={cn(
-          "absolute inset-0 z-10 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100",
-          backgroundClassName,
-        )}
-      />
-      {children}
+<div
+  className={cn(
+    "absolute inset-0 z-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 " +
+    "opacity-0 transition-opacity duration-300 group-hover:opacity-100 " +
+    "mix-blend-multiply pointer-events-none",
+    backgroundClassName
+  )}
+/>
+<div className="relative z-10">
+  {children}
+</div>
     </motion.div>
   )
 }
