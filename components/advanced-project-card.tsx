@@ -148,10 +148,10 @@ export function AdvancedProjectCard({
               <Image
                 src={image || "/placeholder.svg?height=300&width=500"}
                 alt={title}
-                   fill
-    className="relative z-20 w-full rounded-lg object-cover mb-4"
-                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
-                   priority={false}
+                fill
+                className="object-cover w-full h-full rounded-lg mb-4"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                priority={false}
               />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />

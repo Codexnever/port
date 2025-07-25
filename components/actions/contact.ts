@@ -5,7 +5,7 @@ import { Client, Databases, ID } from "appwrite"
 const client = new Client()
   .setEndpoint(process.env.APPWRITE_ENDPOINT || "https://cloud.appwrite.io/v1")
   .setProject(process.env.APPWRITE_PROJECT_ID || "")
-
+  
 const databases = new Databases(client)
 
 export async function submitContactForm(formData: FormData) {

@@ -20,8 +20,6 @@ export const metadata: Metadata = {
     "React Developer",
     "Node.js Developer",
     "AI Developer",
-    "Appwrite Projects",
-    "OpenAI",
     "Exa Ranking Lab",
     "No-Code AI",
     "Software Portfolio",

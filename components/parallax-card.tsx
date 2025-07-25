@@ -64,8 +64,10 @@ export function ParallaxCard({ children, className, backgroundClassName }: Paral
     backgroundClassName
   )}
 />
-<div className="relative z-10">
-  {children}
+<div className="relative z-10 w-full">
+  <div className="w-full aspect-[4/3] relative">
+    {children}
+  </div>
 </div>
     </motion.div>
   )
