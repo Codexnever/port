@@ -138,7 +138,7 @@ export function AdvancedProjectCard({
         }}
       >
         <Card className="overflow-hidden border-zinc-800 bg-zinc-900/80 backdrop-blur-sm h-full">
-          <div className="relative h-48 overflow-hidden">
+              <div className="relative aspect-[4/3] sm:aspect-[4/3] md:aspect-[5/2] w-full overflow-hidden">
             <motion.div
               style={{
                 x: translateX,
@@ -148,9 +148,10 @@ export function AdvancedProjectCard({
               <Image
                 src={image || "/placeholder.svg?height=300&width=500"}
                 alt={title}
-                width={500}
-                height={400}
+                   fill
                 className="object-cover w-full h-full"
+                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                   priority={false}
               />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
