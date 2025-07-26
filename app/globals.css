@@ -1,10 +1,22 @@
+/* Bitcount Single font utility class */
+.bitcount-single {
+  font-family: "Bitcount Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
+  /* Removed direct font-family on body to allow Next.js font loader to apply Poppins via font-sans class */
   --card: 0 0% 3%;
   --card-foreground: 0 0% 100%;
   --popover: 0 0% 3%;
@@ -30,10 +42,6 @@
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }
-/* Only apply border-radius to cards and rounded elements, not all elements */
-.card, .rounded, .rounded-xl, .rounded-lg, .rounded-md, .rounded-sm {
-  border-radius: 14px;
-}
 
 body {
   @apply bg-background text-foreground;
@@ -50,7 +58,7 @@ body.night-bg {
 
 
 .font-sans {
-  font-family: var(--font_outfit), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-poppins), var(--font_outfit), ui-sans-serif, system-ui, sans-serif;
 }
 
 .font-mono {

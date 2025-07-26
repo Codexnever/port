@@ -138,24 +138,25 @@ export function AdvancedProjectCard({
         }}
       >
         <Card className="overflow-hidden border-zinc-800 bg-zinc-900/80 backdrop-blur-sm h-full">
-              <div className="relative aspect-[4/3] sm:aspect-[4/3] md:aspect-[5/2] w-full overflow-hidden">
-            <motion.div
-              style={{
-                x: translateX,
-                y: translateY,
-              }}
-            >
-              <Image
-                src={image || "/placeholder.svg?height=300&width=500"}
-                alt={title}
-                fill
-                className="object-cover w-full h-full rounded-lg mb-4"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
-                priority={false}
-              />
-            </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
-          </div>
+              <div className="relative aspect-[4/3] md:aspect-[5/2] w-full overflow-hidden max-h-[220px] md:max-h-none">
+                <motion.div
+                  className="relative w-full h-full"
+                  style={{
+                    x: translateX,
+                    y: translateY,
+                  }}
+                >
+                  <Image
+                    src={image || "/placeholder.svg?height=300&width=500"}
+                    alt={title}
+                    fill
+                    className="object-cover w-full h-full rounded-lg"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                    priority={false}
+                  />
+                </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
+              </div>
 
           <div className="p-6 space-y-4">
             <motion.h3 className="text-xl font-bold text-white" style={{ translateZ: 50 }}>

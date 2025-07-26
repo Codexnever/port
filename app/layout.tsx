@@ -1,11 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { JetBrains_Mono, Outfit } from "next/font/google"
+import { Outfit, Poppins } from "next/font/google"
 import "./globals.css"
 import DayNightBackground from "@/components/DayNightBackground"
 
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" })
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
+const poppins = Poppins({ subsets: ["latin"], variable: "--font-poppins", weight: ["400", "700"] })
 import { ThemeProvider } from "@/components/theme-provider"
 import ResponsiveNavbar from "@/components/ResponsiveNavbar"
 
@@ -62,9 +62,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet" />
+      </head>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" href="/favicon.png" />
-      <body className={`${jetbrainsMono.variable} ${outfit.variable} font-sans bg-black text-white`}>
+      <body className={`${outfit.variable} ${poppins.variable} font-sans bg-black text-white`}>
         <DayNightBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <ResponsiveNavbar />
