@@ -1,10 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Outfit, Poppins } from "next/font/google"
+import { Poppins } from "next/font/google"
 import "./globals.css"
 import DayNightBackground from "@/components/DayNightBackground"
 
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" })
 const poppins = Poppins({ subsets: ["latin"], variable: "--font-poppins", weight: ["400", "700"] })
 import { ThemeProvider } from "@/components/theme-provider"
 import ResponsiveNavbar from "@/components/ResponsiveNavbar"
@@ -69,8 +68,8 @@ export default function RootLayout({
       </head>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" href="/favicon.png" />
-      <body className={`${outfit.variable} ${poppins.variable} font-sans bg-black text-white`}>
-        <DayNightBackground />
+<body className={`${poppins.variable} font-sans bg-black text-white`}>
+       <DayNightBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <ResponsiveNavbar />
           {children}

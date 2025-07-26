@@ -21,9 +21,10 @@ const config = {
     },
     extend: {
   fontFamily: {
-    sans: ["var(--font-outfit)", ...fontFamily.sans],
-    mono: ["var(--font-jetbrains)", ...fontFamily.mono],
-  },
+  sans: ["var(--font-outfit)", ...fontFamily.sans],
+  mono: ["var(--font-jetbrains)", ...fontFamily.mono],
+  bitcount: ['"Bitcount Single"', 'system-ui', ...fontFamily.sans],
+},
 
       colors: {
         border: "hsl(var(--border))",

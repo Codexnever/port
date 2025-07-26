@@ -161,7 +161,7 @@ const HeroContent = () => (
     </motion.div>
 
     <motion.div
-      className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      className="absolute top-50 left-1/2 transform -translate-x-1/2 animate-bounce"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 1 }}

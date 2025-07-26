@@ -3,9 +3,9 @@ import { Client, Databases, ID } from "appwrite"
 
 // Initialize Appwrite client
 const client = new Client()
-  .setEndpoint(process.env.APPWRITE_ENDPOINT || "https://cloud.appwrite.io/v1")
-  .setProject(process.env.APPWRITE_PROJECT_ID || "")
-  
+  .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "https://cloud.appwrite.io/v1")
+  .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "")
+
 const databases = new Databases(client)
 
 export async function submitContactForm(formData: FormData) {
@@ -16,6 +16,7 @@ export async function submitContactForm(formData: FormData) {
     const subject = formData.get("subject") as string
     const message = formData.get("message") as string
 
+
     // Validate form data
     if (!name || !email || !subject || !message) {
       return { success: false, message: "All fields are required" }
@@ -23,8 +24,8 @@ export async function submitContactForm(formData: FormData) {
 
     // Save to Appwrite database
     const response = await databases.createDocument(
-      process.env.APPWRITE_DATABASE_ID || "",
-      process.env.APPWRITE_COLLECTION_ID || "",
+      process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || "",
+      process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID || "",
       ID.unique(),
       {
         name,
