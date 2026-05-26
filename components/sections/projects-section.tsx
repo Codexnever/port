@@ -38,7 +38,7 @@
                 image="/no-code.png"
                 tags={["Next.js", "Node.js", "Appwrite", "OpenAI API", "React Flow"]}
                 githubUrl="https://github.com/Codexnever/No-Code-AI-Workflow"
-                liveUrl="https://no-code-ai-workflow.vercel.app/"
+                {/* liveUrl="https://no-code-ai-workflow.vercel.app/" */}
                 funnyBug="It occasionally thinks it's sentient. I was working on that."
                 coolFeature="Can predict what you want before you know you want it. Spooky."
               />
@@ -48,7 +48,7 @@
                 image="/email.png"
                 tags={["Next.js", "TypeScript", "Nodemailer", "Agenda"]}
                 githubUrl="https://github.com/Codexnever/Email-Sequence-Builder"
-                liveUrl="https://email-sequence-builder.vercel.app/login"
+                {/* liveUrl="https://email-sequence-builder.vercel.app/login" */}
                 funnyBug="Forgets the recipient's name and defaults to addressing everyone as 'Hey Bestie!'"
                 coolFeature="Schedules your emails to send at the perfect local time for each recipient, no matter where they are."
               />
@@ -57,11 +57,11 @@
                 description="An Instahyre-inspired job portal using React, Node.js, and Appwrite, focusing on AI-driven job recommendations. Features secure authentication, real-time data management, and a smooth UI for recruiters and job seekers."
                 image="/instahyre.png"
                 tags={["React", "Node.js", "Appwrite", "AI Recommendations"]}
-                githubUrl="https://github.com/Codexnever/instahyre-clone"
+                {/* githubUrl="https://github.com/Codexnever/instahyre-clone" */}
                 funnyBug="Sometimes matches developers with astronaut jobs. Aim high, right?"
                 coolFeature="The AI is so good it found me a job I didn't apply for."
               />
-              <AdvancedProjectCard
+              {/* <AdvancedProjectCard
                 title="Exa Ranking Lab(Soon...)"
                 description="Soon..."
                 image="/soon.png"
@@ -69,7 +69,7 @@
                 githubUrl="#"
                 funnyBug="Once thought 'AI girlfriend' and 'ranking algorithm' were the same thing. Close enough."
                 coolFeature="Tracks how Exa evolves in real time—like a microscope for search engine intelligence."
-              />
+              /> */}
             </div>
           </Suspense>
         </div>
