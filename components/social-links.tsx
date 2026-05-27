@@ -37,7 +37,7 @@ export function SocialLinks({ className = "" }: SocialLinksProps) {
 
       <motion.div custom={2} variants={socialVariants} initial="hidden" animate="visible">
         <Link
-          href="https://x.com/ChaitanyaK48841"
+          href="https://x.com/ChaitanyaK57"
           target="_blank"
           rel="noopener noreferrer"
           className="text-zinc-400 transition-colors hover:text-white"
