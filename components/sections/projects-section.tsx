@@ -37,7 +37,6 @@
                 description="A powerful platform built with Next.js, Node.js, Appwrite, and OpenAI API that allows users to create AI-powered workflows with a drag-and-drop interface. Features an intuitive UI and real-time collaboration."
                 image="/no-code.png"
                 tags={["Next.js", "Node.js", "Appwrite", "OpenAI API", "React Flow"]}
-                githubUrl="https://github.com/Codexnever/No-Code-AI-Workflow"
                 funnyBug="It occasionally thinks it's sentient. I was working on that."
                 coolFeature="Can predict what you want before you know you want it. Spooky."
               />
@@ -46,7 +45,6 @@
                 description="This intuitive tool allows you to create and schedule automated email sequences to connect with your audience and achieve your marketing goals"
                 image="/email.png"
                 tags={["Next.js", "TypeScript", "Nodemailer", "Agenda"]}
-                githubUrl="https://github.com/Codexnever/Email-Sequence-Builder"
                 funnyBug="Forgets the recipient's name and defaults to addressing everyone as 'Hey Bestie!'"
                 coolFeature="Schedules your emails to send at the perfect local time for each recipient, no matter where they are."
               />
