@@ -1,80 +1,53 @@
-import type React from "react"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import "./globals.css"
-import DayNightBackground from "@/components/DayNightBackground"
 
-const poppins = Poppins({ subsets: ["latin"], variable: "--font-poppins", weight: ["400", "700"] })
-import { ThemeProvider } from "@/components/theme-provider"
-import ResponsiveNavbar from "@/components/ResponsiveNavbar"
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["400", "600", "700"],
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Chaitanya Kulthe | Full Stack & AI Developer",
+  metadataBase: new URL("https://portfolio-chaitanyas-projects-cb5494a0.vercel.app"),
+  title: "Chaitanya Kulthe | Search Systems Builder",
   description:
-    "Building future-ready web apps with React, Node.js, and AI. Explore my work on AI tools, Exa Ranking Lab, and no-code automation platforms.",
-    keywords: [
+    "Full-stack developer building retrieval evaluation, ranking observability, and search quality tools with Exa, Weaviate, and Cohere.",
+  keywords: [
     "Chaitanya Kulthe",
-    "Full Stack Developer",
-    "JavaScript Developer",
-    "React Developer",
-    "Node.js Developer",
+    "Search Engineer",
+    "Retrieval Engineer",
     "AI Developer",
     "Exa Ranking Lab",
-    "No-Code AI",
-    "Software Portfolio",
+    "Rerank Debugger",
+    "Weaviate",
+    "Search Evaluation",
   ],
-  authors: [{ name: "Chaitanya Kulthe", url: "https://codexnever.appwrite.network/" }],
+  authors: [{ name: "Chaitanya Kulthe" }],
   creator: "Chaitanya Kulthe",
-  metadataBase: new URL("https://codexnever.appwrite.network/"),
   openGraph: {
-    title: "Chaitanya Kulthe | Full Stack & AI Developer",
-    description:
-      "A self-taught dev building powerful tools with JavaScript, AI, and semantic search. Dive into real-world projects like Exa Ranking Lab and no-code AI workflows.",
-    url: "https://codexnever.appwrite.network//",
-    siteName: "Chaitanya Kulthe Portfolio",
-    images: [
-      {
-        url: "https://codexnever.appwrite.network/og-cover-v2.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Chaitanya Kulthe – Developer Portfolio",
-      },
-    ],
+    title: "Chaitanya Kulthe | Search Systems Builder",
+    description: "Building tools that make retrieval quality visible, measurable, and easier to debug.",
+    url: "/",
+    siteName: "Chaitanya Kulthe",
+    images: [{ url: "/og-cover-v2.jpg", width: 1200, height: 630, alt: "Chaitanya Kulthe portfolio" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chaitanya Kulthe | Next-Gen Engineer",
-    description:
-      "Explore AI-powered apps, developer tools, and next-gen search analytics built with love, logic, and JavaScript.",
-    images: ["https://codexnever.appwrite.network/og-cover-v2.jpg"],//Must full url 
-    creator: "@ChaitanyaK48841", 
+    title: "Chaitanya Kulthe | Search Systems Builder",
+    description: "Building tools that make retrieval quality visible, measurable, and easier to debug.",
+    images: ["/og-cover-v2.jpg"],
+    creator: "@ChaitanyaK57",
   },
 }
 
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet" />
-      </head>
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" href="/favicon.png" />
-<body className={`${poppins.variable} font-sans bg-black text-white`}>
-       <DayNightBackground />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
-          <ResponsiveNavbar />
-          {children}
-        </ThemeProvider>  
-      </body>
+    <html lang="en">
+      <body className={poppins.variable}>{children}</body>
     </html>
   )
 }
