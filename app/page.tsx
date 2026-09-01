@@ -84,7 +84,7 @@ export default function Home() {
             <span className="brand-mark">CK</span>
             <span className="brand-copy">
               <strong>Chaitanya Kulthe</strong>
-              <small>Search systems builder</small>
+              <small>Search &amp; retrieval engineer</small>
             </span>
           </a>
 
@@ -108,7 +108,7 @@ export default function Home() {
             Building in public from Pune, India
           </div>
 
-          <p className="eyebrow">Full-stack developer · retrieval obsessed</p>
+          <p className="eyebrow">Search &amp; retrieval engineer · AI search quality</p>
           <h1 id="hero-title">
             I build tools that make search quality <em>visible.</em>
           </h1>
@@ -249,7 +249,7 @@ export default function Home() {
             <p className="eyebrow">02 / About</p>
             <h2 id="about-title">Learning search by building the missing instruments.</h2>
             <p>
-              I started as a full-stack developer and kept moving closer to the hard part: deciding which information
+              I started by building web products and kept moving closer to the hard part: deciding which information
               deserves to be returned first. Today I build around hybrid retrieval, vector search, reranking, and
               evaluation—then explain what I learn in public.
             </p>
@@ -308,7 +308,7 @@ export default function Home() {
       <footer className="footer section-frame">
         <div>
           <strong>Chaitanya Kulthe</strong>
-          <span>Full-stack developer building better ways to inspect search.</span>
+          <span>Search &amp; retrieval engineer building better ways to inspect relevance.</span>
         </div>
         <div className="footer-links">
           <a href="https://github.com/Codexnever" target="_blank" rel="noreferrer" aria-label="GitHub">
