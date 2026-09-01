@@ -1,238 +1,332 @@
-"use client"
-import dynamic from "next/dynamic"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Mail, Code, Sparkles, ArrowDown, Loader2 } from "lucide-react"
-import { motion } from "framer-motion"
-import { Suspense } from "react"
+import {
+  Activity,
+  ArrowDownRight,
+  ArrowUpRight,
+  Braces,
+  Database,
+  Github,
+  Layers3,
+  Linkedin,
+  Mail,
+  MapPin,
+  Search,
+  SlidersHorizontal,
+  Sparkles,
+} from "lucide-react"
 
-// Lazy load heavy components
-const NetworkParticlesBackground = dynamic(() => import("@/components/network-particles-background").then(mod => ({ default: mod.NetworkParticlesBackground })), { 
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
-})
+const projects = [
+  {
+    number: "01",
+    title: "Rerank Debugger",
+    label: "Retrieval evaluation workspace",
+    description:
+      "A hands-on arena for comparing Exa, Weaviate, fused, and diversified retrieval on the same query. It combines blind relevance judgments, Cohere reranking, and ranking metrics so search decisions become measurable.",
+    tags: ["Exa", "Weaviate", "Cohere", "NDCG", "MMR"],
+    href: "https://rerank-debugger.vercel.app",
+    linkLabel: "Open live project",
+    icon: SlidersHorizontal,
+    featured: true,
+  },
+  {
+    number: "02",
+    title: "Exa Ranking Lab",
+    label: "Search ranking observability",
+    description:
+      "Captures search snapshots and turns them into churn, volatility, anomaly, and semantic-drift signals—helping teams see how retrieval results evolve over time.",
+    tags: ["Next.js", "TypeScript", "Appwrite", "Weaviate"],
+    href: "https://exa-ranking-lab.vercel.app",
+    linkLabel: "Explore the lab",
+    icon: Activity,
+    featured: false,
+  },
+  {
+    number: "03",
+    title: "No-Code AI Workflow",
+    label: "Visual automation builder",
+    description:
+      "A drag-and-drop workflow tool for composing AI actions without wiring every step by hand, backed by reusable nodes and persistent workflows.",
+    tags: ["Next.js", "Node.js", "Appwrite", "React Flow"],
+    href: "https://github.com/Codexnever/No-Code-AI-Workflow",
+    linkLabel: "View on GitHub",
+    icon: Layers3,
+    featured: false,
+  },
+]
 
-const RotatingQuotes = dynamic(() => import("@/components/rotating-quotes").then(mod => ({ default: mod.RotatingQuotes })), { ssr: false })
-const RotatingGear = dynamic(() => import("@/components/rotating-gear").then(mod => ({ default: mod.RotatingGear })), { ssr: false })
-
-// Lazy load sections for better code splitting
-const AboutSection = dynamic(() => import("@/components/sections/about-section").then(mod => ({ default: mod.AboutSection })), { 
-  ssr: true,
-  loading: SectionLoader 
-})
-
-const ProjectsSection = dynamic(() => import("@/components/sections/projects-section").then(mod => ({ default: mod.ProjectsSection })), { 
-  ssr: true,
-  loading: SectionLoader 
-})
-
-const BlogSection = dynamic(() => import("@/components/sections/blog-section").then(mod => ({ default: mod.default })), { 
-  ssr: false, 
-  loading: SectionLoader 
-})
-
-const SoonSection = dynamic(() => import("@/components/sections/soon-section").then(mod => ({ default: mod.SoonSection })), { 
-  ssr: true,
-  loading: SectionLoader 
-})
-
-const JourneySection = dynamic(() => import("@/components/sections/journey-section").then(mod => ({ default: mod.JourneySection })), { 
-  ssr: true,
-  loading: SectionLoader 
-})
-
-const ContactSection = dynamic(() => import("@/components/sections/contact-section").then(mod => ({ default: mod.ContactSection })), { 
-  ssr: true,
-  loading: SectionLoader 
-})
-
-const FooterSection = dynamic(() => import("@/components/sections/footer-section").then(mod => ({ default: mod.FooterSection })), { 
-  ssr: true,
-  loading: SectionLoader 
-})
-
-function SectionLoader() {
-  return (
-    <div className="flex justify-center items-center min-h-[60vh] w-full">
-      <div className="flex flex-col items-center gap-4">
-        <Loader2 className="h-8 w-8 text-indigo-500 animate-spin" />
-        <p className="text-indigo-400 text-sm">Loading amazing content...</p>
-      </div>
-    </div>
-  )
-}
-
-// Optimized hero content component
-const HeroContent = () => (
-  <div className="relative z-20 container mx-auto px-4 text-center space-y-8">
-    <motion.div 
-      initial={{ opacity: 0, y: -20 }} 
-      animate={{ opacity: 1, y: 0 }} 
-      transition={{ duration: 0.5 }}
-    >
-      <Badge
-        className="mb-4 bg-indigo-900/30 text-indigo-300 hover:bg-indigo-800/40 border-indigo-700/50"
-        variant="outline"
-      >
-        <Sparkles className="mr-1 h-3 w-3" /> Next-Gen Engineer
-      </Badge>
-    </motion.div>
-
-    <div className="space-y-4">
-      <motion.h1
-        className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight relative z-10"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.7,
-          delay: 0.2,
-          type: "spring",
-          stiffness: 100,
-        }}
-      >
-        Chaitanya Kulthe
-      </motion.h1>
-
-      <motion.div
-        className="flex items-center justify-center"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.7,
-          delay: 0.4,
-          type: "spring",
-          stiffness: 100,
-        }}
-      >
-        <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl font-bold">
-          System Builder
-        </span>
-        <Suspense fallback={<div className="w-12 h-12" />}>
-          <RotatingGear />
-        </Suspense>
-      </motion.div>
-    </div>
-
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.6 }}
-      className="max-w-2xl mx-auto"
-    >
-      <Suspense fallback={<div className="text-xl text-gray-300 h-8">Building systems that matter...</div>}>
-        <RotatingQuotes
-          quotes={[
-            "I don't follow trends. I follow pain points.",
-            "In a world of keywords, I build for meaning.",
-            "Ranking Lab isn't a project. It's a semantic microscope.",
-            "I don't pitch products. I build the ones your infra wishes it had.",
-            "Each log in my lab tells a story no analyst can see.",
-            "I don't optimize for pageviews. I optimize for *precision*.",
-            "This isn't a portfolio. It's a prelude to what you'll copy next.",
-            "While others measure success in stars, I count drift in embeddings.",
-          ]}
-          interval={4000}
-          className="text-xl text-gray-300"
-        />
-      </Suspense>
-    </motion.div>
-
-    <motion.div
-      className="flex flex-wrap justify-center gap-4 pt-8"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
-    >
-      <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700 group">
-        <a href="#projects">
-          View My Work <Code className="ml-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
-        </a>
-      </Button>
-      <Button
-        asChild
-        size="lg"
-        variant="outline"
-        className="border-indigo-700 text-indigo-300 hover:bg-indigo-900/30 group"
-      >
-        <a href="#contact">
-          Contact Me <Mail className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </a>
-      </Button>
-    </motion.div>
-
-    <motion.div
-      className="absolute top-1/5 left-[49%] transform -translate-x-1/2 animate-bounce"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 1 }}
-    >
-      <a href="#about" className="text-indigo-400 hover:text-indigo-300">
-        <ArrowDown className="h-8 w-8" />
-      </a>
-    </motion.div>
-  </div>
-)
+const skillGroups = [
+  {
+    title: "Retrieval",
+    icon: Search,
+    items: ["BM25", "Dense search", "Hybrid search", "HNSW", "Reranking", "NDCG / MRR"],
+  },
+  {
+    title: "Building",
+    icon: Braces,
+    items: ["Next.js", "TypeScript", "React", "Node.js", "REST APIs", "Testing"],
+  },
+  {
+    title: "Data",
+    icon: Database,
+    items: ["Weaviate", "Appwrite", "Redis", "MySQL", "MongoDB", "Embeddings"],
+  },
+]
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      {/* Optimized Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />}>
-            <NetworkParticlesBackground />
-          </Suspense>
+    <main id="top" className="site-shell">
+      <a className="skip-link" href="#work">
+        Skip to selected work
+      </a>
+
+      <header className="nav-wrap">
+        <nav className="nav-surface" aria-label="Primary navigation">
+          <a className="brand" href="#top" aria-label="Chaitanya Kulthe, home">
+            <span className="brand-mark">CK</span>
+            <span className="brand-copy">
+              <strong>Chaitanya Kulthe</strong>
+              <small>Search &amp; retrieval engineer</small>
+            </span>
+          </a>
+
+          <div className="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <a className="mini-button" href="mailto:chaitanyakulthe777@gmail.com">
+            Let&apos;s talk
+            <ArrowUpRight aria-hidden="true" />
+          </a>
+        </nav>
+      </header>
+
+      <section className="hero section-frame" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <div className="availability-pill">
+            <span className="status-light" aria-hidden="true" />
+            Building in public from Pune, India
+          </div>
+
+          <p className="eyebrow">Search &amp; retrieval engineer · AI search quality</p>
+          <h1 id="hero-title">
+            I build tools that make search quality <em>visible.</em>
+          </h1>
+          <p className="hero-intro">
+            I&apos;m Chaitanya—a self-taught developer exploring the layer between retrieval and relevance. My work turns
+            ranking changes, semantic drift, and reranking choices into things engineers can inspect and improve.
+          </p>
+
+          <div className="hero-actions">
+            <a className="raised-button primary-button" href="#work">
+              See selected work
+              <ArrowDownRight aria-hidden="true" />
+            </a>
+            <a
+              className="raised-button icon-button"
+              href="https://github.com/Codexnever"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit Chaitanya's GitHub profile"
+            >
+              <Github aria-hidden="true" />
+              GitHub
+            </a>
+          </div>
         </div>
-        <HeroContent />
+
+        <div className="workbench" aria-label="Illustration of a search quality workbench">
+          <div className="workbench-top">
+            <div className="screw" aria-hidden="true" />
+            <div>
+              <span>SEARCH QUALITY</span>
+              <strong>Workbench / 01</strong>
+            </div>
+            <div className="signal-lights" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className="screw" aria-hidden="true" />
+          </div>
+
+          <div className="screen-panel">
+            <span className="screen-label">ACTIVE QUERY</span>
+            <p>why did this result move?<span className="screen-caret" aria-hidden="true" /></p>
+          </div>
+
+          <div className="pipeline-panel">
+            <div className="pipeline-heading">
+              <span>Candidate flow</span>
+              <span>Top 10</span>
+            </div>
+
+            <div className="pipeline-row">
+              <span className="source-dot source-dot-orange" aria-hidden="true" />
+              <strong>Exa</strong>
+              <small>live web</small>
+              <div className="meter"><i style={{ width: "82%" }} /></div>
+            </div>
+            <div className="pipeline-row">
+              <span className="source-dot source-dot-blue" aria-hidden="true" />
+              <strong>Weaviate</strong>
+              <small>memory</small>
+              <div className="meter"><i style={{ width: "68%" }} /></div>
+            </div>
+            <div className="pipeline-row">
+              <span className="source-dot source-dot-green" aria-hidden="true" />
+              <strong>Cohere</strong>
+              <small>rerank</small>
+              <div className="meter"><i style={{ width: "91%" }} /></div>
+            </div>
+          </div>
+
+          <div className="metric-dials">
+            <div className="metric-dial">
+              <span>NDCG@10</span>
+              <strong>.87</strong>
+              <i className="dial-line dial-line-one" aria-hidden="true" />
+            </div>
+            <div className="metric-dial">
+              <span>CHURN</span>
+              <strong>42%</strong>
+              <i className="dial-line dial-line-two" aria-hidden="true" />
+            </div>
+            <div className="metric-dial">
+              <span>DRIFT</span>
+              <strong>LOW</strong>
+              <i className="dial-line dial-line-three" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Sections with Intersection Observer */}
-      <SectionWrapper id="about">
-        <AboutSection />
-      </SectionWrapper>
+      <section id="work" className="section-frame section-block" aria-labelledby="work-title">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">01 / Selected work</p>
+            <h2 id="work-title">Built to answer real retrieval questions.</h2>
+          </div>
+          <p>
+            Less “AI wrapper,” more instrumentation: projects that expose how retrieval systems behave and where they
+            fail.
+          </p>
+        </div>
 
-      <SectionWrapper id="projects">
-        <ProjectsSection />
-      </SectionWrapper>
+        <div className="project-grid">
+          {projects.map((project) => {
+            const Icon = project.icon
 
-      <SectionWrapper id="blog">
-        <BlogSection />
-      </SectionWrapper>
+            return (
+              <article className={`project-card ${project.featured ? "project-featured" : ""}`} key={project.title}>
+                <div className="project-card-top">
+                  <span className="project-number">{project.number}</span>
+                  <div className="project-icon">
+                    <Icon aria-hidden="true" />
+                  </div>
+                </div>
+                <p className="project-label">{project.label}</p>
+                <h3>{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="tag-row" aria-label={`${project.title} technologies`}>
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <a href={project.href} target="_blank" rel="noreferrer" className="project-link">
+                  {project.linkLabel}
+                  <ArrowUpRight aria-hidden="true" />
+                </a>
+              </article>
+            )
+          })}
+        </div>
+      </section>
 
-      <SectionWrapper id="soon">
-        <SoonSection />
-      </SectionWrapper>
+      <section id="about" className="section-frame section-block" aria-labelledby="about-title">
+        <div className="about-panel">
+          <div className="about-copy">
+            <p className="eyebrow">02 / About</p>
+            <h2 id="about-title">Learning search by building the missing instruments.</h2>
+            <p>
+              I started by building web products and kept moving closer to the hard part: deciding which information
+              deserves to be returned first. Today I build around hybrid retrieval, vector search, reranking, and
+              evaluation—then explain what I learn in public.
+            </p>
+            <blockquote>
+              “Similarity gets candidates. Evaluation tells us whether they were actually useful.”
+            </blockquote>
+            <div className="location-line">
+              <MapPin aria-hidden="true" /> Pune, India
+              <span aria-hidden="true">·</span>
+              Open to search and applied AI teams
+            </div>
+          </div>
 
-      <SectionWrapper id="journey">
-        <JourneySection />
-      </SectionWrapper>
+          <div className="skill-rack">
+            {skillGroups.map((group) => {
+              const Icon = group.icon
 
-      <SectionWrapper id="contact">
-        <ContactSection />
-      </SectionWrapper>
+              return (
+                <div className="skill-module" key={group.title}>
+                  <div className="skill-title">
+                    <span><Icon aria-hidden="true" /></span>
+                    <strong>{group.title}</strong>
+                  </div>
+                  <div className="skill-list">
+                    {group.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
-      <SectionWrapper id="footer" minHeight="min-h-[20vh]">
-        <FooterSection />
-      </SectionWrapper>
+      <section id="contact" className="section-frame contact-section" aria-labelledby="contact-title">
+        <div className="contact-panel">
+          <div className="contact-copy">
+            <div className="contact-icon" aria-hidden="true">
+              <Sparkles />
+            </div>
+            <div>
+              <p className="eyebrow">03 / Contact</p>
+              <h2 id="contact-title">Working on search that deserves a debugger?</h2>
+              <p>I&apos;d love to hear what you&apos;re building, what is breaking, and which metric refuses to explain why.</p>
+            </div>
+          </div>
+
+          <a className="raised-button primary-button contact-button" href="mailto:chaitanyakulthe777@gmail.com">
+            <Mail aria-hidden="true" />
+            Send me an email
+          </a>
+        </div>
+      </section>
+
+      <footer className="footer section-frame">
+        <div>
+          <strong>Chaitanya Kulthe</strong>
+          <span>Search &amp; retrieval engineer building better ways to inspect relevance.</span>
+        </div>
+        <div className="footer-links">
+          <a href="https://github.com/Codexnever" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <Github aria-hidden="true" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/chaitanya-kulthe/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <Linkedin aria-hidden="true" />
+          </a>
+          <a href="https://x.com/ChaitanyaK57" target="_blank" rel="noreferrer" aria-label="X profile">
+            <span className="x-mark">𝕏</span>
+          </a>
+        </div>
+      </footer>
     </main>
-  )
-}
-
-// Intersection Observer wrapper for performance
-const SectionWrapper = ({ 
-  children, 
-  id, 
-  minHeight = "min-h-[60vh]" 
-}: { 
-  children: React.ReactNode
-  id: string
-  minHeight?: string 
-}) => {
-  return (
-    <div id={id} className={minHeight}>
-      <Suspense fallback={<SectionLoader />}>
-        {children}
-      </Suspense>
-    </div>
   )
 }
