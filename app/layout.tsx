@@ -11,9 +11,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-chaitanyas-projects-cb5494a0.vercel.app"),
-  title: "Chaitanya Kulthe | Search Systems Builder",
+  title: "Chaitanya Kulthe | Search & Retrieval Engineer",
   description:
-    "Full-stack developer building retrieval evaluation, ranking observability, and search quality tools with Exa, Weaviate, and Cohere.",
+    "Search and retrieval engineer building evaluation, ranking observability, and search quality tools with Exa, Weaviate, and Cohere.",
   keywords: [
     "Chaitanya Kulthe",
     "Search Engineer",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Chaitanya Kulthe" }],
   creator: "Chaitanya Kulthe",
   openGraph: {
-    title: "Chaitanya Kulthe | Search Systems Builder",
+    title: "Chaitanya Kulthe | Search & Retrieval Engineer",
     description: "Building tools that make retrieval quality visible, measurable, and easier to debug.",
     url: "/",
     siteName: "Chaitanya Kulthe",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chaitanya Kulthe | Search Systems Builder",
+    title: "Chaitanya Kulthe | Search & Retrieval Engineer",
     description: "Building tools that make retrieval quality visible, measurable, and easier to debug.",
     images: ["/og-cover-v2.jpg"],
     creator: "@ChaitanyaK57",
